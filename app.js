@@ -1,6 +1,6 @@
-function processImage{
+function processImage(){
 var ImageAPIUrl = "https://uksouth.api.cognitive.microsoft.com/vision/v2.0/ocr"; // Microsoft API Call page
-var ImageAPIKey = ""; // Please enter an API Key to use this feature
+var ImageAPIKey = "1c20f181438e4b11a722d8eb2febf1b4"; // Please enter an API Key to use this feature
     
     // Default parameters. Used in almost all cases
     var parameters = {
@@ -14,7 +14,7 @@ var ImageAPIKey = ""; // Please enter an API Key to use this feature
     
     // API Call - Time for some jQuery
     $.ajax({
-        url: ImageAPIKey + "?" + $.param(parameters),
+        url: ImageAPIUrl + "?" + $.param(parameters),
         
         // Header
         beforeSend: function(jqXHR){
