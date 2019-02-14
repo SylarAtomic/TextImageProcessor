@@ -8,6 +8,14 @@ var ImageAPIKey = "1c20f181438e4b11a722d8eb2febf1b4"; // Please enter an API Key
         "detectOrientation" : "true",
     };
     
+    var nums = {
+        "1": "2",
+        "3": "Yes", 
+        "4": "No",
+    };
+    
+    var info= "";
+    
     // Get user image
     var imageURL = document.getElementById("inputImage").value;
     document.querySelector("#sourceImage").src = imageURL;
@@ -31,7 +39,7 @@ var ImageAPIKey = "1c20f181438e4b11a722d8eb2febf1b4"; // Please enter an API Key
             console.log('Standard', data);
             console.log(JSON.stringify(data, null, 2));
             var obj = JSON.parse(JSON.stringify(data, null, 2));
-            var info= "";
+
             
             /*$.each(data, function(i, info){
                 info += (obj.regions[0].lines[0].words[i].text);
@@ -49,9 +57,13 @@ var ImageAPIKey = "1c20f181438e4b11a722d8eb2febf1b4"; // Please enter an API Key
                     var numWords = obj.regions[0].lines[j].words.length;
                         for(var i = 0; i < numWords; i++){
                             info += obj.regions[0].lines[j].words[i].text + ' ';
+                                /*if(i = obj.regions[0].lines[j].words[i].lastIndex){
+                                   info += 'last of';
+                                   }*/
+                            }
+                            info += '\n';
                 }
-            }
-            console.log(info);
+           // console.log(info);
 
         }
         
@@ -69,7 +81,8 @@ var ImageAPIKey = "1c20f181438e4b11a722d8eb2febf1b4"; // Please enter an API Key
         
         //var jsonObj = JSON.parse(data);
         
-        $("#responseTextArea").val(jsonObj.text);
+        // $("#responseTextArea").val(jsonObj.text); Changes this back to what it should be!
+        $("#responseTextArea").val(info);
         
         
     })
