@@ -14,7 +14,7 @@ var ImageAPIKey = "1c20f181438e4b11a722d8eb2febf1b4"; // Please enter an API Key
     
     // API Call - Time for some jQuery
     $.ajax({
-        url: ImageAPIUrl + "?" + $.param(parameters),
+            url: ImageAPIUrl + "?" + $.param(parameters),
         
         // Header
         beforeSend: function(jqXHR){
@@ -27,12 +27,50 @@ var ImageAPIKey = "1c20f181438e4b11a722d8eb2febf1b4"; // Please enter an API Key
         // Body
         data: '{"url": ' + '"' + imageURL + '"}',
         
+        success: function(data) {
+            console.log('Standard', data);
+            console.log(JSON.stringify(data, null, 2));
+            var obj = JSON.parse(JSON.stringify(data, null, 2));
+            var info= "";
+            
+            /*$.each(data, function(i, info){
+                info += (obj.regions[0].lines[0].words[i].text);
+            })*/
+            //console.log(obj);
+            
+            //console.log(obj.regions.lines.words.text);
+            
+            //var numWords = obj.regions[0].lines[j].words.length;
+            
+            var numLines = obj.regions[0].lines.length;
+            
+            for(var j = 0; j < numLines; j++)
+                {
+                    var numWords = obj.regions[0].lines[j].words.length;
+                        for(var i = 0; i < numWords; i++){
+                            info += obj.regions[0].lines[j].words[i].text + ' ';
+                }
+            }
+            console.log(info);
+
+        }
+        
     })
     
     // Successful
     .done(function(data) {
         // Display image text
-        $("#responseTextArea").val(JSON.stringify(data, null, 2));
+       // $("#responseTextArea").val(JSON.stringify(data, null, 2));
+        /*$("#responseTextArea").val(JSON.stringify(data, function(key, value){
+            if (key == "text") {
+                return value;
+            }
+        }, 2));*/
+        
+        //var jsonObj = JSON.parse(data);
+        
+        $("#responseTextArea").val(jsonObj.text);
+        
         
     })
     // Error
@@ -61,4 +99,6 @@ var ImageAPIKey = "1c20f181438e4b11a722d8eb2febf1b4"; // Please enter an API Key
 
 
 // https://static.makeuseof.com/wp-content/uploads/2018/04/Save-Water.jpg
+
+// https://raw.githubusercontent.com/MicrosoftDocs/mslearn-process-images-with-the-computer-vision-service/master/images/ebook.png
 

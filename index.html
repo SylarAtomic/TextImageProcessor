@@ -3,6 +3,10 @@
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
         <link rel="sytlesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/grid.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="app.js"></script>
+
         <title>Image Text Extractor</title>
     
     </head>
@@ -22,22 +26,25 @@
             </ul>
         </p1>
         
-        <input type="text" name="inputImage" id="inputImage" value="" />
+        <input type="text" name="inputImage" id="inputImage" value="https://raw.githubusercontent.com/MicrosoftDocs/mslearn-process-images-with-the-computer-vision-service/master/images/ebook.png" />
         <button onclick="processImage()">Read image</button>
         <br><br>
-         Response:
-        <br><br>
-        <textarea id="responseTextArea" class="UIInput"
-                  style="width:580px; height:400px;"></textarea>
-        </div>
-    
-        <div id="imageDiv" style="width:420px; display:table-cell;">
-            Source image:
-            <br><br>
-            <img id="sourceImage" width="400" />
-        </div>
         
-        
-        <script src="app.js"></script>
+        <div class="row">
+            <div class="col span-1-of-2 box">
+                 Response:
+                <br><br>
+                <textarea id="responseTextArea" class="UIInput"
+                          style="width:580px; height:400px;"></textarea>
+            </div>
+
+            <div class="col span-1-of-2 box">
+                <div id="imageDiv" style="width:420px; display:table-cell;">
+                 Source image:
+                    <br><br>
+                    <img id="sourceImage" width="400" />
+                </div>
+            </div>        
+        </div>
     </body>
 </html>
