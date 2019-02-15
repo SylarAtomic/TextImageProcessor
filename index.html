@@ -14,11 +14,15 @@
     
     <body>
         <h1>Image Text Extractor</h1>
+     <div class="row info-box">
+      <div class="col span-1-of-2 box how-works-box">
         <h2>How does it work?</h2>
         <p1>
-        You select an URL to an picture. A request is send to Microsoft Cognitive API. The request is send back here.
+        You select an URL to a image with text. A request is send to Microsoft Cognitive API. The request is send back here.
         </p1>
-        <h3>Image Restrictions</h3>
+         </div>
+         <div class="col span-1-of-2 box restrictons-box">
+        <h2>Image Restrictions</h2>
         <p1>
             <ul>
                 <li>Supported image formats: JPEG, PNG, GIF, BMP.</li>
@@ -26,23 +30,34 @@
                 <li>Image dimensions must be at least 50 x 50.</li>
             </ul>
         </p1>
-        
-        <input type="text" name="inputImage" id="inputImage" value="https://raw.githubusercontent.com/MicrosoftDocs/mslearn-process-images-with-the-computer-vision-service/master/images/ebook.png" />
-        <button onclick="processImage()" class="btn">Read image</button>
-        
+         </div>
+        </div>
         <div class="row">
             <div class="col span-1-of-2 box">
+        <h3 class="inputHeading">Input Image URL</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col span-1-of-2 box">
+        <input type="text" name="inputImage" id="inputImage" value="https://raw.githubusercontent.com/MicrosoftDocs/mslearn-process-images-with-the-computer-vision-service/master/images/ebook.png" />
+                </div>
+            </div>
+                <div class="row button-class">
+            <div class="col span-1-of-2 box button">
+        <button onclick="processImage()" class="btn">Read image</button>
+            </div>
+           </div>
+        <div class="row">
+            <div class="col span-1-of-2 box response-box">
                  <h4>Response:</h4>
                 <textarea id="responseTextArea" class="UIInput"
                           style="width:580px; height:400px;"></textarea>
             </div>
 
-            <div class="col span-1-of-2 box">
-                <div id="imageDiv" style="width:420px; display:table-cell;">
-                 <h4>Source image:</h4>
-                    <img id="sourceImage" class="sourceImage" width="400" />
-                                            <i class="ion-ios-star icon-small"></i>
-
+            <div class="col span-1-of-2 box source-box">
+                <div id="imageDiv">
+                    <h4>Source image:</h4>
+                    <img id="sourceImage" class="sourceImage" height="400"/>
                 </div>
             </div>        
         </div>
