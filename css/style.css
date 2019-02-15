@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+/* ----------------------------------------------- */
+/* GENERAL SETTINGS */
+/* ----------------------------------------------- */
+
 html,
 body {
     background-color: #fff;
@@ -35,6 +39,10 @@ h1 {
     
 }
 
+/* ----------------------------------------------- */
+/* HOW IT WORKS AND IMAGE RESTRICTIONS */
+/* ----------------------------------------------- */
+
 h3 {
     margin-top: 15px;
     margin-bottom: 5px;
@@ -64,6 +72,10 @@ h4 {
     padding-left: 2%;
 }
 
+/* ----------------------------------------------- */
+/* INPUT */
+/* ----------------------------------------------- */
+
 .inputHeading {
     margin-top: 10px;
 }
@@ -83,6 +95,10 @@ button {
     margin-top: -2%;
     margin-left: 42.7%;
 }
+
+/* ----------------------------------------------- */
+/* RESPONSE AND SOURCE IMAGE */
+/* ----------------------------------------------- */
 
 textarea {
     border-color: #e67e22;
@@ -112,5 +128,37 @@ input {
     margin-right: auto;
     
 }
+
+/* ----------------------------------------------- */
+/* FOOTER */
+/* ----------------------------------------------- */
+
+footer {
+    background-color: rgba(247, 247, 247, 0.65);
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0;
+}
+
+footer-section {
+     display: inline-block;
+}
+
+footer-text {
+    text-align: center;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+
 
 
